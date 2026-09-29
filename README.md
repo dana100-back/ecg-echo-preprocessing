@@ -17,7 +17,7 @@ Requires Python 3.10+ and pandas 2.x. `openpyxl` is needed when reading `.xlsx` 
 ```bash
 python -m pip install -r requirements.txt
 python example.py
-python -m unittest discover -s tests -v
+python -m unittest test_preprocessing -v
 ```
 
 To process your own authorized table, import `prepare_echo_records` and pass a pandas DataFrame with these source columns: `환자번호` (patient ID), `생년월일` (birth date), `검사시행일` (exam date), and `검사결과` (report). Dates must be parseable by pandas. The optional `cutoff` argument includes examinations on or before that date. `build_intermediate_table` creates a separate echo measurement table. `process_file` runs both steps and writes a CSV.
